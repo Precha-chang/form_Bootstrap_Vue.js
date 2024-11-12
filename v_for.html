@@ -110,30 +110,7 @@
                 <h3 class="mb-0 text-white" style="font-weight: 600;">แบบฟอร์มลงทะเบียน</h3>
                 <p class="text-white-50 mb-0">กรุณากรอกข้อมูลให้ครบถ้วน</p>
             </div>
-             <!-- ส่วนที่แสดงรายการข้อมูลที่บันทึก -->
-    <div v-if="submittedData.length" class="mt-4">
-        <h4>ข้อมูลที่บันทึกแล้ว</h4>
-        <ul class="list-group">
-            <li class="list-group-item" v-for="(data, index) in submittedData" :key="index">
-                <strong>ชื่อ:</strong> {{ data.firstName }} {{ data.lastName }}<br>
-                <strong>โทรศัพท์:</strong> {{ data.phone }}<br>
-                <strong>อีเมล์:</strong> {{ data.email }}<br>
-                <strong>รหัสนักศึกษา:</strong> {{ data.studentId }}<br>
-                <strong>บัตรประชาชน:</strong> {{ data.idCard }}<br>
-                <strong>ที่อยู่:</strong> {{ data.address }}
-            </li>
-        </ul>
-    </div>
-    <!-- ฟอร์มการลงทะเบียน -->
-    <div class="card mt-4">
-        <div class="card-header">
-            <h3 class="mb-0 text-white" style="font-weight: 600;">แบบฟอร์มลงทะเบียน</h3>
-            <p class="text-white-50 mb-0">กรุณากรอกข้อมูลให้ครบถ้วน</p>
-        </div>
-        <div class="card-body">
-            <!-- ฟอร์มเหมือนเดิม -->
-        </div>
-    </div>
+
             <div class="card-body">
                 <form @submit.prevent="validateForm" class="needs-validation" novalidate>
                     <!-- ข้อมูลส่วนตัว -->
@@ -263,6 +240,29 @@
                     </div>
                 </form>
             </div>
+             <!-- ฟอร์มการลงทะเบียน -->
+    <div class="card mt-4">
+        <div class="card-header">
+            <h3 class="mb-0 text-white" style="font-weight: 600;">ข้อมูลลงทะเบียน</h3>
+            <p class="text-white-50 mb-0">กรุณาเช็คข้อมูลให้ถูกต้อง</p>
+        </div>
+         
+                         <!-- ส่วนที่แสดงรายการข้อมูลที่บันทึก -->
+    <div v-if="submittedData.length" class="mt-4">
+        <h4>ข้อมูลที่บันทึกแล้ว</h4>
+        <ul class="list-group">
+            <li class="list-group-item" v-for="(data, index) in submittedData" :key="index">
+                <strong>ชื่อ:</strong> {{ data.firstName }} {{ data.lastName }}<br>
+                <strong>โทรศัพท์:</strong> {{ data.phone }}<br>
+                <strong>อีเมล์:</strong> {{ data.email }}<br>
+                <strong>รหัสนักศึกษา:</strong> {{ data.studentId }}<br>
+                <strong>บัตรประชาชน:</strong> {{ data.idCard }}<br>
+                <strong>ที่อยู่:</strong> {{ data.address }}
+            </li>
+        </ul>
+    </div>
+   
+    </div>
         </div>
     </div>
 
